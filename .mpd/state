@@ -1,9 +1,9 @@
 sw_volume: 81
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 0
-time: 120.035000
+state: pause
+current: 56
+time: 102.492000
 random: 1
 repeat: 1
 single: 0
@@ -60,4 +60,14 @@ playlist_begin
 45:ÖÜ½ÜÂ×-¡¶»ôÔª¼×¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac
 46:ÖÜ½ÜÂ×-¡¶ËµºÃµÄÐÒ¸£ÄØ¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac
 47:花海 - 周杰伦.mp3
+48:阳光男孩 阳光女孩 - 音乐热搜.m4a
+49:you-dian-tian-wang-su-long_281600826.mp3
+50:K歌之王   陈奕迅.mp3
+51:海阔天空(первое издание 1993)   黄家驹.mp3
+52:苦笑 - 汪苏泷.m4a
+53:陈奕迅 Eason Chan – 爱情转移 Ai Qing Zhuan Yi.mp3
+54:大地   黄家驹.mp3
+55:讲不出再见   谭咏麟.mp3
+56:遇见   孙燕姿.mp3
+57:布拉格广场   蔡依林.mp3
 playlist_end

@@ -52,27 +52,26 @@ waybar启动后的效果。
     sudo pacman -S base-devel debugedit fakeroot
     # 安装最新的hyprland
     sudo pacman -S hyprland-git
-    # 安装项目需要的软件
-    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils ulseaudio-bluetooth fcitx5-im fcitx5-pinyin-zhwiki swayidle alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh
-    oh-my-zsh-git autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad
+    # 安装项目需要的软件, 最好配置了archlinuxcn-keyring再安装
+    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-pinyin-zhwiki swayidle alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd
     
-    paru -S rofi-lbonn-wayland-only-git mpvpaper-git
+    paru -S rofi-lbonn-wayland-only-git oh-my-zsh-git mpvpaper-git
     ```
-
+    
     - swaybg壁纸
-
+    
     - mpd，mpc，ncmpcpp听歌的
-
+    
     - bluez bluez-utils pulseaudio-bluetooth蓝牙
-
+    
     - fcitx5-im fcitx5-pinyin-zhwiki 输入法
-
+    
     - swayidle 息屏
-
+    
     - alacritty-git 终端模拟器
-
+    
     - kitty 终端模拟器
-
+    
     - mako 告警提示, libnotify中的notify-send命令可以发送文本到mako
     
     - grim截图

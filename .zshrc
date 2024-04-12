@@ -150,6 +150,7 @@ alias man="man -M /usr/share/man/zh_CN"
 alias py="python"
 alias typora="/opt/Typora-linux-x64/Typora"
 alias startdocker="sudo systemctl start docker.service"
+alias vim="nvim"
 # 自动获取arch pacman的最快的源
 alias reflectora="sudo reflector --verbose -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist"
 alias remake="echo 'VirtualBox虚拟机：

@@ -1,0 +1,223 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 54, // Waybar height (to be removed for auto height)
+  "spacing": 0, // Gaps between modules
+  "modules-left": [
+    "clock",
+    "tray",
+    "custom/apps",
+    "wlr/taskbar",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "custom/weather",
+    "idle_inhibitor",
+    "custom/screenshot",
+    "custom/clipboardclear",
+    "custom/wallpapers",
+    "memory",
+    "disk",
+    "temperature",
+    "backlight",
+    "battery",
+    "custom/power"
+  ],
+  "fixed-center": true,
+  "mod": "dock",
+  // Modules configuration
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "spacaing": 0,
+    "icon-size": 18,
+    "icon-theme": "Papirus",
+    "on-click-middle": "close",
+    "tooltip": true,
+    "tooltip-format": "{title}",
+    "max-length": 15,
+    "ignore-list": [
+      "rofi -  ",
+      "rofi -  ",
+      "rofi -  ",
+      "rofi -  ",
+      "rofi - dmenu"
+    ]
+  },
+  "hyprland/window": {
+    "format": "  {}",
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*)~": " 󰚺 ",
+      "(.*)rofi - dmenu": " 󰅍 ",
+      "(.*) - mpv": "  ",
+      "(.*)musicfox": "  ",
+      "(.*)Ranger": "  "
+    },
+    "max-length": 20
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 6
+    }
+  },
+  "custom/wallpapers": {
+    "format": " ",
+    "on-click": "bash ~/.config/waybar/scripts/wollpaper.sh 1",
+    "on-click-right": "bash ~/.config/waybar/scripts/wollpaper.sh 2"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons": {
+      "activated": "󰕥 ",
+      "deactivated": "󰦝 "
+    }
+  },
+  "tray": {
+    "icon-size": 17,
+    "spacing": 6
+  },
+  "clock": {
+    "interval": 1,
+    "timezone": "Asia/GuangDong",
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+    "format-alt": "{:%Y %m %d}"
+  },
+  "memory": {
+    "format": "󰍛 ",
+    "interval": 1,
+    "tooltip-format": "{used}GiB"
+  },
+  "disk": {
+    "format": "󰋊 ",
+    "tooltip-format": "{used}",
+    "interval": 1
+  },
+  "temperature": {
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "interval": 1
+  },
+  "backlight": {
+    "format": "{icon}",
+    "tooltip-format": "{percent}%",
+    "format-icons": [
+      "󰃞 ",
+      "󰃝 ",
+      "󰃟 ",
+      "󰃠 "
+    ],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip-format": "{capacity}%",
+    "format": "{icon}",
+    "format-charging": "",
+    "interval": 1,
+    "format-icons": [
+      "󰂎",
+      "󰁼",
+      "󰁿",
+      "󰂁",
+      "󰁹"
+    ]
+  },
+  "network": {
+    "format-wifi": "󰤨  {essid}",
+    "format-ethernet": "  Wired",
+    "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-linked": "󱘖 {ifname} (No IP)",
+    "format-disconnected": "  Disconnected",
+    "format-alt": "󰤨  {signalStrength}%",
+    "interval": 1,
+    "on-click": "sh ~/.config/waybar/scripts/vpn-warp.sh",
+  },
+  "pulseaudio": {
+    "format": "{icon}{volume}",
+    "format-muted": "󰖁 0",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
+    },
+    "on-click-right": "pavucontrol -t 3",
+    "on-click": "pactl -- set-sink-mute 0 toggle",
+    "tooltip": false,
+    "on-scroll-up": "pactl -- set-sink-volume 0 +1%",
+    "on-scroll-down": "pactl -- set-sink-volume 0 -1%"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}",
+    "format-source-muted": " 0",
+    "on-click-right": "pavucontrol -t 4",
+    "on-click": "pactl -- set-source-mute 0 toggle",
+    "tooltip": false,
+    "on-scroll-up": "pactl -- set-source-volume 0 +1%",
+    "on-scroll-down": "pactl -- set-source-volume 0 -1%"
+  },
+  "custom/power": {
+    "format": "  ",
+    "on-click": "wlogout -b 5",
+    "interval": 86400, // once every day
+    "tooltip": false
+  },
+  "custom/screenshot": {
+    "format": "󰹑 ",
+    "on-click": "grim -g \"$(slurp)\" - | wl-copy > /dev/null ",
+    "on-click-right": "grim - | wl-copy > /dev/null ",
+    "tooltip": false
+  },
+  "custom/clipboardclear": {
+    "format": "󰃢 ",
+    "on-click": "bash $HOME/.config/waybar/scripts/clipboardclear.sh",
+    "tooltip": false
+  },
+  "custom/apps": {
+    "format": "Apps",
+    "on-click": "rofi -show drun -normal-window",
+    "tooltip": false
+  },
+  "custom/weather": {
+    "format": "Weather: {}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Nanjing --hide-conditions --date-format %m-%d --custom-indicator {FeelsLikeC}",
+    "return-type": "json"
+  },
+}

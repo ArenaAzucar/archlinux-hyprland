@@ -79,8 +79,8 @@ function main() {
 }
 
 # ##### 用来判断是否需要输出歌词
-stateFile="${HOME}/.config/waybar/scripts"
-touch ~/.config/waybar/scripts/state.txt
+stateFile="${HOME}/.config/waybar/default/scripts"
+touch ~/.config/waybar/default/scripts/state.txt
 function state() { # 只需要判断文件是否存在就像
 	state=$(find "$stateFile" -name state.txt)
 	if [ "$state" = "" ]; then
