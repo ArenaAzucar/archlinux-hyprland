@@ -223,6 +223,15 @@ tooltip label {
     margin-bottom: 3px;
 }
 
+
+#custom-vpn {
+    background-color: @barbg;
+    color: @hbtu;
+    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+
 #temperature {
     padding-right: 9px;
     font-size: 16px;

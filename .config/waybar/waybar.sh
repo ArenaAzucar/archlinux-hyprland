@@ -6,15 +6,15 @@
 rand=$(($RANDOM % 4))
 
 Themes_0() {
-	waybar --config ~/.config/waybar/default/config --style ~/.config/waybar/default/style.css
+	waybar --config ~/.config/waybar/default/config.jsonc --style ~/.config/waybar/default/style.css
 }
 
 Themes_1() {
-	waybar --config ~/.config/waybar/Themes/bluish/config --style ~/.config/waybar/Themes/bluish/style.css
+	waybar --config ~/.config/waybar/Themes/bluish/config.jsonc --style ~/.config/waybar/Themes/bluish/style.css
 }
 
 Themes_2() {
-	waybar --config ~/.config/waybar/Themes/minimal/config --style ~/.config/waybar/Themes/minimal/style.css
+	waybar --config ~/.config/waybar/Themes/minimal/config.jsonc --style ~/.config/waybar/Themes/minimal/style.css
 }
 
 Themes_3() {
