@@ -12,7 +12,7 @@
 
 waybar启动后的效果。
 
-![image-20240413140416252](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140416252)
+![image-20240413140416252](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140416252.png)
 
 ![image-20240413140614920.png](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140614920.png)
 
