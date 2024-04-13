@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########## 壁纸
-path="${HOME}/.config/waybar/default/scripts"
+path="${HOME}/.config/waybar/scripts"
 
 function killProcess() {
 	pid=$(ps aux | grep "$1" | grep -v 'grep' | awk '{print $2}')
@@ -15,20 +15,19 @@ function main() {
 	1)
 		killProcess "randomWallpaperVideo"
 		killProcess "mpvpaper"
-		killProcess "swaybg"
 		killProcess "background-changer"
+		killProcess "swaybg"
 		bash "$path/background-changer" &
 		;;
 	2)
 		killProcess "randomWallpaperVideo"
-		killProcess "swaybg"
 		killProcess "mpvpaper"
 		killProcess "background-changer"
-		bash $path/randomWallpaperVideo.sh &
+		killProcess "swaybg"
+		bash "$path/randomWallpaperVideo.sh" &
 		;;
 	esac
 
 }
 
 main $1
-
