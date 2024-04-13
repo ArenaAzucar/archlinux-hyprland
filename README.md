@@ -8,15 +8,15 @@
 
 默认启动就是空的，只有一个壁纸。（个人爱好，欣赏壁纸不喜欢有别的东西来吸引我的注意力。）
 
-![image-20240315021212624](https://github.com/ArenaAzucar/Linux-Hyprland/blob/master/assets/image-20240315021212624.png)
+![image-20240413140242770.png](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140242770.png)
 
 waybar启动后的效果。
 
-![image-20240315021535682](https://github.com/ArenaAzucar/Linux-Hyprland/blob/master/assets/image-20240315032247243.png)
+![image-20240413140416252](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140416252)
 
-![image-20240319043935861](https://github.com/ArenaAzucar/Linux-Hyprland/blob/master/assets/image-20240319043935861.png)
+![image-20240413140614920.png](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140614920.png)
 
-![image-20240315021656961](https://github.com/ArenaAzucar/Linux-Hyprland/blob/master/assets/image-20240315032053058.png)
+![image-20240413140659488.png](https://github.com/ArenaAzucar/Linux-Hyprland/blob/master/assets/image-20240413140659488.png)
 
 # 安装
 
