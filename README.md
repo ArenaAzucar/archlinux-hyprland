@@ -6,11 +6,11 @@
 
 # 预览
 
-默认启动就是空的，只有一个壁纸。（个人爱好，欣赏壁纸不喜欢有别的东西来吸引我的注意力。）
+默认启动:
 
 ![image-20240413140242770.png](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140242770.png)
 
-waybar启动后的效果。
+waybar启动后的效果:
 
 ![image-20240413140416252](https://github.com/ArenaAzucar/archlinux-hyprland/blob/master/assets/image-20240413140416252.png)
 
@@ -53,7 +53,7 @@ waybar启动后的效果。
     # 安装最新的hyprland
     sudo pacman -S hyprland-git
     # 安装项目需要的软件, 最好配置了archlinuxcn-keyring再安装
-    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-pinyin-zhwiki swayidle alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd
+    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-pinyin-zhwiki alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd hypridle hyprlock
     
     paru -S rofi-lbonn-wayland-only-git oh-my-zsh-git mpvpaper-git
     ```
@@ -66,7 +66,7 @@ waybar启动后的效果。
     
     - fcitx5-im fcitx5-pinyin-zhwiki 输入法
     
-    - swayidle 息屏
+    - swayidle 息屏（弃用）
     
     - alacritty-git 终端模拟器
     
@@ -103,6 +103,8 @@ waybar启动后的效果。
     
     - zsh oh-my-zsh-git autojump zsh-syntax-highlighting zsh-autosuggestions 都是zsh用的
     
+    - hyprlock/hypridle 分别是hyprland的官方锁屏工具和超时执行工具
+    
 
 
 - 将该项目配置应用到主机
@@ -122,8 +124,8 @@ waybar启动后的效果。
 	gpasswd -a mpd audio
 	# zsh配置文件
 	cp $path/.zshrc ${HOME}/.zshrc
-	# vim配置文件,配的比较垃圾,不建议使用
-	cp $path/.vimrc ${HOME}/.vimrc
+	# vim配置文件,配的比较垃圾,不建议使用（已切换为neovim）
+	# cp $path/.vimrc ${HOME}/.vimrc
 	# 添加输入法需要的环境变量
 	echo 'GTK_IM_MODULE=fcitx5
 	QT_IM_MODULE=fcitx5
@@ -211,6 +213,7 @@ waybar启动后的效果。
   ######## Hypr
   $mainMod,T	# 打开中的terminal
   $mainMod,C # 关闭窗口
+  $mainMod,Q # 关闭窗口
   $mainMod,M # 退出hyprland,相当于windows的注销
   $mainMod,E # 打开文件管理器
   $mainMod,v	# 切换窗口浮动
@@ -249,29 +252,15 @@ waybar启动后的效果。
   $mainMod $nMod,<反向键> 		# 移动窗口位置
   ```
   
-- waybar上的功能
-
-  ```bash
-  # launcher : Arch图标是操作mpc（音乐相关），左键是暂停播放/开始播放, 右键显示/关闭歌词
-  # workspaces:（工作区域）显示
-  # tray: 显示启动了的软件
-  # ci：歌词显示，暂停音乐会自动消失（这是为将launcher改成【暂停播放/开始播放】的原因），鼠标滚轮可以调整音量（调整的mpd的音量，并不是系统音量），鼠标左键是暂停播放（暂停时该模块会消失，可以点launcher来播放音乐，该模块会自动弹出）。
-  # wallpaper：壁纸切换，随机换一个壁纸（需要你自己在对应的路径添加图片）,右键切换动态壁纸
-  # backlight：调整屏幕亮度，单点无效，鼠标滚轮可以调整亮度
-  # pulseaudip：系统音量调整，单点静音，鼠标滚轮可以调整音量
-  # clock：显示时间，单点显示日前，悬浮显示日历
-  # battery：显示电量
-  # power：显示wlogout
-  ```
-
 - keyd(修改按键)
 
   ```bash
   # 修改配置文件/etc/keyd/default.conf
   [ids]
+  
   *
+  
   [main]
-  # 按win键真的很不方便,
   # 将capslock改成meta（SUPER）键，只是添加一些组合键,原本的功能不变
   capslock = overload(capslock_layer,capslock)
   
@@ -296,14 +285,15 @@ waybar启动后的效果。
   8 = M-8
   9 = M-9
   0 = M-0
+  w = M-w
+  q = M-q
   up = M-up
   down = M-down
   left = M-left
   right = M-right
   [ = M-[
   ] = M-]
-  # leftmouse = M-leftmouse	
-  rightshift = right 		# zsh
+  rightshift = right
   ```
   
 
@@ -332,9 +322,15 @@ waybar启动后的效果。
 
    ```sh
    # 安装
-   sudo pacman -S pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland-git obs-studio-git
-   # 修改hyprland配置
-   exec-once = systemctl --user import-environment WAYLAND_DISPLAY
+   paru -S xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk pavucontrol
+   sudo pacman -S obs-studio-git
+   # 修改hyprland配置 (~/.config/hypr/land/exec_once.conf)
+   # obs录屏需要
+   # audio,xdg desktop obs录屏用
+   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+   exec-once = systemctl --user stop pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
+   exec-once = systemctl --user start pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
+   
    # 重启
    ```
    
