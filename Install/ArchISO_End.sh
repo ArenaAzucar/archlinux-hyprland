@@ -46,3 +46,6 @@ end_installArch() {
 	echo "::1		localhost" >>/mnt/etc/hosts
 	echo "127.0.0.1	${sysName}.localdomain  ${sysName}" >>/mnt/etc/hosts
 }
+
+begin_installArch
+end_installArch

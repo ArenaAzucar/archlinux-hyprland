@@ -22,7 +22,7 @@ locale-gen
 # 安装系统引导,intelcpu驱动 等工具 , 这里是intel的 , amd自行百度
 pacman -S grub efibootmgr intel-ucode os-prober
 # 创建文件夹并生成grub配置文件
-mkdir /boot/grub GEN
+mkdir /boot/grub
 grub-mkconfig >/boot/grub/grub.cfg
 # 安装grub
 # uname -m    # 这是查看cpu架构会否支持 , 现在的cpu应该都是x86_64的了
