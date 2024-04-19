@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# 修改root用户密码
+passwd
+
+# 安装系统网络等工具
+pacman -S iwd dhcpcd vi sudo
+
+# 添加新非root用户
+read -p "Please enter New USER Name :" userName
+useradd -m -G wheel -s /bin/bash $userName
+passwd $userName
+# 将新增用户的所在组添加到sudoers配置文件
+echo '%wheel ALL=(ALL:ALL) ALL' >>/etc/sudoers
+
+# 创建时区，并写入文件
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# 同步系统时间
+hwclock --systohc
+# locale-gen根据刚在U盘系统中修改的文件安装语言
+locale-gen
+# 安装系统引导,intelcpu驱动 等工具 , 这里是intel的 , amd自行百度
+pacman -S grub efibootmgr intel-ucode os-prober
+# 创建文件夹并生成grub配置文件
+mkdir /boot/grub GEN
+grub-mkconfig >/boot/grub/grub.cfg
+# 安装grub
+# uname -m    # 这是查看cpu架构会否支持 , 现在的cpu应该都是x86_64的了
+grub-install --target=x86_64-efi --efi-directory=/boot #安装 , 注意修改架构 , 不会就百度
+
+echo 'installation is complete!!!'

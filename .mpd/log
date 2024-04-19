@@ -2226,3 +2226,51 @@ Apr 13 16:12 : player: played "遇见   孙燕姿.mp3"
 Apr 13 16:43 : player: played "遇见   孙燕姿.mp3"
 Apr 14 00:21 : output: Failed to pause "pulse audio" (pulse): failed to connect the stream: Connection terminated
 Apr 14 00:50 : player: played "ÖÜ½ÜÂ×-¡¶½è¿Ú¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac"
+Apr 14 23:45 : player: played "ÖÜ½ÜÂ×-¡¶½è¿Ú¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac"
+Apr 14 23:45 : player: played "ÖÜ½ÜÂ×-¡¶½è¿Ú¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac"
+Apr 15 02:07 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:07 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:07 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:08 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:08 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:12 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:12 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:12 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:12 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:12 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:12 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:16 : player: played "ÖÜ½ÜÂ×-¡¶¸éÇ³¡· mp3ÒôÀÖÔÚÏßÏÂÔØ.mp3"
+Apr 15 02:16 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:19 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Apr 15 02:19 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 15 02:20 : player: played "ÖÜ½ÜÂ×-¡¶°®ÔÚÎ÷ÔªÇ°¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac"
+Apr 15 02:20 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:24 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:24 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:25 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:26 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:26 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:26 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:27 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:27 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:27 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 15 02:27 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:27 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:27 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:28 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:28 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 15 02:29 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 00:59 : player: played "ÖÜ½ÜÂ×-¡¶Ë«½Ø¹÷¡· ÎÞËðÒôÀÖÃâ·ÑÏÂÔØ.flac"
+Apr 16 01:09 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 01:10 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 01:10 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 01:10 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 01:11 : player: played "布拉格广场   蔡依林.mp3"
+Apr 16 13:49 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 13:49 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 13:49 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 16 13:50 : player: played "you-dian-tian-wang-su-long_281600826.mp3"
+Apr 18 14:21 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 18 14:21 : output: Failed to play on "pulse audio" (pulse): suspended
+Apr 18 14:21 : exception: Failed to open "pulse audio" (pulse); pa_context_connect() has failed: Connection refused
+Apr 18 14:22 : player: played "布拉格广场   蔡依林.mp3"

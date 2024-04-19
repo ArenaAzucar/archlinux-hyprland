@@ -299,22 +299,15 @@ waybar启动后的效果:
 
 # 遇到的问题
 
-1. `waybar`的歌词为什么不显示？歌词文件放在哪里？
-
-   `waybar`中间的歌词需要依赖脚本`waybar/scripts/songLyrics.sh`， 如果你需要修改歌词文件存放路径，那么你需要修改`songLyrics.sh`文件的第6行：
-
-   ```bash
-   # #### 修改～/music为你歌词文件的存放路径
-   f=`find “~/music” -name "**.lrc" | grep $1 | grep $2`
-   ```
-
-   **注意：该脚本只限于`.lrc`歌词文件, 并且当音乐暂停时歌词会消失，所以为把Arch的图标改成里`暂停/开始`音乐。如果歌曲没有找到歌词，那么会显示歌名，如果你有好的办法可以分享一下。**
-
-2. waybar崩溃
+1. waybar崩溃
 
    报错:`segmentation fault (core dumped)  waybar`
 
    不知道怎么处理, 可能是配置文件有问题, 偶尔会出现这个问题.
+
+2. waybar触发点击事件后不管点击waybar的任何其他按钮都会触发之前的按钮事件。
+
+   。。。。不知道杂处理
 
 3. obs录屏问题
 
@@ -333,9 +326,9 @@ waybar启动后的效果:
    
    # 重启
    ```
-   
+
    - 问题:obs有`屏幕采集`,但是采集的是黑屏
-   
+
    ```sh
    # 需要修改配置文件
    # 这个是全局生效:/usr/share/applications/com.obsproject.Studio.desktop
