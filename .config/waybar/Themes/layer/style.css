@@ -157,6 +157,7 @@ tooltip label {
 #tray,
 #idle_inhibitor,
 #memory,
+#cpu,
 #disk,
 #battery,
 #temperature,
@@ -203,6 +204,11 @@ tooltip label {
     padding-left: 15px;
     margin-left: 10px;
     margin-right: -4px;
+}
+
+#cpu {
+    font-size: 18px;
+    padding-right: 2px;
 }
 
 #disk {

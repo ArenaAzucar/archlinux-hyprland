@@ -24,6 +24,7 @@
         "custom/clipboardclear",
         "custom/wallpapers",
         "memory",
+        "cpu",
         "disk",
         "temperature",
         "backlight",
@@ -104,6 +105,10 @@
         "format": "󰍛 ",
         "interval": 1,
         "tooltip-format": "{used}GiB"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " ",
     },
     "disk": {
         "format": "󰋊 ",
