@@ -53,7 +53,7 @@ waybar启动后的效果:
     # 安装最新的hyprland
     sudo pacman -S hyprland-git
     # 安装项目需要的软件, 最好配置了archlinuxcn-keyring再安装
-    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-pinyin-zhwiki alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd hypridle hyprlock
+    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-chinese-addons alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd hypridle hyprlock
     
     paru -S rofi-lbonn-wayland-only-git oh-my-zsh-git mpvpaper-git
     ```
@@ -64,7 +64,7 @@ waybar启动后的效果:
     
     - bluez bluez-utils pulseaudio-bluetooth蓝牙
     
-    - fcitx5-im fcitx5-pinyin-zhwiki 输入法
+    - fcitx5-im fcitx5-chinese-addons 输入法
         - 如果要使用薄荷输入法(rime[中州韵])
             ```ｓｈ
                 sudo pacman -S fcitx5-rime-git
@@ -92,6 +92,11 @@ waybar启动后的效果:
     - yad是wlogout需要i使用的工具
     
     - rofi-lbonn-wayland-only-git软件启动器
+        - 仓库里也有wofi软件启动器具的配置
+        ```~~
+            # 安装wofi
+            sudo pacman -S wofi
+        ```
     
     - pcmanfm文件管理工具
     
