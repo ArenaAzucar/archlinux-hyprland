@@ -7,8 +7,17 @@ ZSH=/usr/share/oh-my-zsh/
 
 export LANG=zh_CN.UTF-8
 
-export QT_QPA_PLATFORM=wayland
-
+# flutter 配置
+# flutter 镜像
+# export PUB_HOSTED_URL=https://pub.flutter-io.cn
+# export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+# 上海交大
+export PUB_HOSTED_URL=https://mirror.sjtu.edu.cn/dart-pub;
+export FLUTTER_STORAGE_BASE_URL=https://mirror.sjtu.edu.cn
+# 清华大学
+# export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
+# export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+export CHROME_EXECUTABLE=/usr/bin/chromium
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

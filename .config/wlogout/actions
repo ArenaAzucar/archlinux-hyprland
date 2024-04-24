@@ -31,7 +31,7 @@ elif [[ "$1" == '--hibernate' ]]; then
 elif [[ "$1" == '--lock' ]]; then
 	cdialog
 	if [[ "$?" == 0 ]]; then
-		hyprlock
+		hyprlock -q -c $($HOME/.config/hypr/hyprlock.sh)
 	else
 		exit
 	fi

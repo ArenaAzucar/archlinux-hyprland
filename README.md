@@ -65,6 +65,17 @@ waybar启动后的效果:
     - bluez bluez-utils pulseaudio-bluetooth蓝牙
     
     - fcitx5-im fcitx5-pinyin-zhwiki 输入法
+        - 如果要使用薄荷输入法(rime[中州韵])
+            ```ｓｈ
+                sudo pacman -S fcitx5-rime-git
+
+                # 然后导入薄荷输入法 官方：https://www.mintimate.cc/zh/guide/
+                # 下载
+                git clone https://github.com/Mintimate/oh-my-rime.git
+                # 将oh-my-rime下所有文件复制到　~/.local/share/fcitx5/rime/下
+                cp oh-my-rime/* ~/.local/share/fcitx5/rime/ -r 
+                # 最后重启输入法。
+            ```
     
     - swayidle 息屏（弃用）
     
