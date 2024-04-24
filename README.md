@@ -76,7 +76,7 @@ waybar启动后的效果:
                 cp oh-my-rime/* ~/.local/share/fcitx5/rime/ -r 
                 # 最后重启输入法。
             ```
-    
+
     - swayidle 息屏（弃用）
     
     - alacritty-git 终端模拟器
