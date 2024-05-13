@@ -353,6 +353,15 @@ waybar启动后的效果:
    Exec=obs -platform wayland
    # 重启/注销
    ```
+   - 问题:obs启动报错`obs: error while loading shared libraries: libpython3.11.so.1.0: cannot open shared object file: No such file or directory`
+   ```bash
+    # 这个问题是因为/usr/bin目录下缺少'libpython3.11.so.1.0'，或类似的
+    # 你可以下载python3然后复制其中的lib下的libpython3.11.so.1.0文件到/usr/bin目录下
+    
+    # 如果你有安装或使用pyenv工具,那么你可以pyenv install 3.11.9安装一个pythen版本。
+    # 然后再在'$HOME/.pyenv/versions/'找到自己安装的版本号，进入到目录，找到lib目录，复制其中的'libpython3.11.so.1.0'到/usr/lib/
+    sudo cp .pyenv/versions/3.11.9/lib/libpython3.11.so.1.0 /usr/lib
+   ```
 
 # 参考文档
 
