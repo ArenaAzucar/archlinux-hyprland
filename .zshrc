@@ -29,7 +29,11 @@ export CHROME_EXECUTABLE=/usr/bin/chromium
 # ZSH_THEME="ys"
 ZSH_THEME="theunraveler"
 
-
+# golang configuration
+export GOROOT=/usr/lib/go  #设置为go安装的路径，有些安装包会自动设置默认的goroot
+export GOPATH=$HOME/go-work   #默认的Golang项目的工作空间
+export GOBIN=$GOPATH/bin   # go install命令生成的可执行文件的路径
+export PATH=$PATH:$GOROOT/bin:$GOBIN
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -160,6 +164,10 @@ alias py="python"
 alias typora="/opt/Typora-linux-x64/Typora"
 alias startdocker="sudo systemctl start docker.service"
 alias vim="nvim"
+alias start_Sqlserver='docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Qq.123123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest'
+alias start_Mysql='docker run --name mysql -d -p 3306:3306 --restart unless-stopped -v /mydata/mysql/log:/home/Azucar/docker/mysql/log/mysql -v /mydata/mysql/data:/home/Azucar/docker/mysql/var/lib/mysql -v /mydata/mysql/conf:/home/Azucar/docker/mysql/etc/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.4.0'
+
+
 # 自动获取arch pacman的最快的源
 alias reflectora="sudo reflector --verbose -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist"
 alias remake="echo 'VirtualBox虚拟机：
