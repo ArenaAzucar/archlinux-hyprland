@@ -362,6 +362,12 @@ waybar启动后的效果:
     # 然后再在'$HOME/.pyenv/versions/'找到自己安装的版本号，进入到目录，找到lib目录，复制其中的'libpython3.11.so.1.0'到/usr/lib/
     sudo cp .pyenv/versions/3.11.9/lib/libpython3.11.so.1.0 /usr/lib
    ```
+ - 240531.问题:fcitx5更新后，切换输入法时fcitx5程序会挂。
+    ```sh
+        # 跟新了fcitx5的环境变量
+        vim ~/.config/hypr/land/hypr_env.conf
+        # 如果还是程序莫名挂，那么请放弃使用中州韵输入法（可以在fcitx5的设置中切换）。
+    ```
 
 # 参考文档
 
