@@ -4,12 +4,12 @@
 # ############
 
 function thisCopy() {
-    cp "$1" "$2" &
+    cp -r "$1" "$2" &
     progress -mp $!
 }
 
 function thisMove() {
-    mv "$1" "$2" &
+    mv -r "$1" "$2" &
     progress -mp $!
 }
 

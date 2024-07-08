@@ -171,7 +171,8 @@ alias start_Mysql='docker run --name mysql -d -p 3306:3306 --restart unless-stop
 
 scripts="$HOME/.config/Scripts"
 # cp mv等命令加上进度
-alias cp="sh $scripts/diyCpMv.sh 1 "
+alias cpcp="sh $scripts/diyCpMv.sh 1 "
+alias mvmv="sh $scripts/diyCpMv.sh 2 "
 
 # 自动获取arch pacman的最快的源
 alias reflectora="sudo reflector --verbose -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist"
@@ -193,7 +194,7 @@ waybar不显示音量，或无法调节音量：
 '"
 
 # ########## vscode滚动更新后美化插件失效，每次都需要重新调整，20240620在此进行修改
-alias code="sudo sh ~/.config/Scripts/VSCodeUpdate.sh && code "
+alias vscode-update="sudo sh ~/.config/Scripts/VSCodeUpdate.sh "
 # ###########
 
 
