@@ -5,11 +5,11 @@ begin_installArch() {
 	# 修改磁盘格式
 	read -p "Please enter BootGrub Interval of address:" grubAdd
 	read -p "Please enter forwardslash Interval of address:" ForwardSlashAdd
-	mkfs.fat -F32 $grubAdd
-	mkfs.ext4 $ForwardSlashAdd
+	mkfs.fat -F32 "$grubAdd"
+	mkfs.ext4 "$ForwardSlashAdd"
 	read -p "Please enter swap Interval of address:" swapAdd
-	mkswap $swapAdd
-	swapon $swapAdd
+	mkswap "$swapAdd"
+	swapon "$swapAdd"
 	echo 'Disk Partitioning completed!!! '
 
 	# 挂载分区
@@ -39,7 +39,6 @@ end_installArch() {
 	read -p "Please enter System Name:" sysName
 	echo "$sysName" >/mnt/etc/hostname
 
-	echo '::1 localhost' >>/mnt/etc/hosts
 	echo '' >>/mnt/etc/hosts
 	echo '' >>/mnt/etc/hosts
 	echo "127.0.0.1	localhost" >>/mnt/etc/hosts

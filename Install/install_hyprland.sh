@@ -39,7 +39,7 @@ install_toots() {
 }
 
 copy_my_config() {
-    echo "archlinux-hyprland path example : $HOME/Desktop/archlinux-hyprland"
+    echo "archlinux-hyprland path example : $PWD"
     read -p "Please enter archlinux-hyprland path :" url
     cp -r "$url/.config/*" "/home/$user_local/.config/"
     cp "$url/keyd/default.conf" "/etc/keyd/default.conf"
