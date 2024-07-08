@@ -1,0 +1,424 @@
+
+* {
+  font-family: "Monaco";
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 0px;
+}
+
+/* color */
+@define-color barbg rgba(255, 255, 255, 0);
+@define-color litebg #C5FFF8;
+@define-color abtu #5FBDFF;
+@define-color txt #7B66FF;
+@define-color hbtu #FF90BC;
+@define-color tolbg #96EFFF;
+
+/* Waybar background */
+
+window#waybar {
+  background: @barbg;
+}
+
+tooltip {
+  background: @barbg;
+}
+
+tooltip label {
+  color: @hbtu;
+  text-shadow: none;
+  font-size: 14px;
+}
+
+/* Workspace */
+
+#workspaces {
+  background: @litebg;
+  color: @abtu;
+  margin: 8px 0px 8px 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 18px;
+  text-shadow: none;
+}
+
+/* 按钮 - 背景 */
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: @litebg;
+  background: @abtu;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+/* 选中效果 */
+#workspaces button.active {
+  background: @txt;
+  border-radius: 14px;
+  color: white;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 22px;
+  padding-right: 22px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.6s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+/* 悬停动态效果 */
+#workspaces button:hover {
+  background: @hbtu;
+  border-radius: 14px;
+  color: @litebg;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-right: 10px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.6s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#custom-apps {
+  border-radius: 18px 0 0 18px;
+  background: @litebg;
+  color: @abtu;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  padding-left: 16px;
+}
+
+/* Taskbar - 任务栏（显示所有已经启动的app） */
+
+#taskbar {
+  background: @litebg;
+  margin: 8px 0px 8px 0px;
+}
+
+/* 按钮 */
+#taskbar button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 14px;
+  margin-left: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+/* 选中效果 */
+#taskbar button.active {
+  border-radius: 14px;
+  background: @abtu;
+  margin-left: 6px;
+  padding-left: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-right: 16px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.6s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+/* 悬停动态效果 */
+#taskbar button:hover {
+  border-radius: 14px;
+  background: @hbtu;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.6s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+/* Hyprland Window 当前选中的应用的名称 */
+#window {
+  background: @litebg;
+  border-radius: 0px 18px 18px 0px;
+  margin: 8px 0px 8px 0px;
+  padding-right: 10px;
+  color: @abtu;
+}
+
+/* Modules - 所有固定项统一背景颜色 */
+#clock,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#memory,
+#cpu,
+#disk,
+#battery,
+#temperature,
+#backlight,
+#custom-power,
+#custom-screenshot,
+#custom-clipboardclear,
+#custom-wallpapers {
+  color: @txt;
+  background-color: @litebg;
+  border-width: 0px;
+  margin: 8px 0px 8px 0px;
+  font-size: 19px;
+  text-shadow: none;
+}
+
+/* 动画 */
+@keyframes bgAnimation {
+  0% {
+    background-position: 0% 200%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* 按钮边框渐变色 */
+@keyframes rotate {
+  to {
+    border-color: @litebg;
+  }
+}
+
+/* 悬浮渐变 */
+#clock:hover,
+#custom-power:hover {
+  border-radius: 18px;
+  border-width: 7px;
+  border-color: @litebg;
+}
+
+/* 时间/power 背景动画 */
+#clock,
+#custom-power {
+  /* background: rgb(137, 180, 250); */
+  background: radial-gradient(
+    circle,
+    rgba(137, 180, 250, 120) 0%,
+    rgba(142, 179, 250, 120) 6%,
+    rgba(148, 226, 213, 1) 14%,
+    rgba(147, 178, 250, 1) 14%,
+    rgba(155, 176, 249, 1) 18%,
+    rgba(245, 194, 231, 1) 28%,
+    rgba(158, 175, 249, 1) 28%,
+    rgba(181, 170, 248, 1) 58%,
+    rgba(205, 214, 244, 1) 69%,
+    rgba(186, 169, 248, 1) 69%,
+    rgba(195, 167, 247, 1) 72%,
+    rgba(137, 220, 235, 1) 73%,
+    rgba(198, 167, 247, 1) 78%,
+    rgba(203, 166, 247, 1) 100%
+  );
+  background-size: 400% 400%;
+  animation: bgAnimation 9s cubic-bezier(0.72, 0.39, 0.21, 1) infinite;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+  font-weight: bold;
+  color: #fff;
+}
+
+#custom-power {
+  padding-left: 0px;
+  padding-right: 5px;
+  margin-left: 10px;
+  margin-right: 20px;
+  background-color: @barbg;
+  border-width: 7px;
+  border-style: solid;
+  border-radius: 18px;
+  border-color: @hbtu;
+  color: @tolbg;
+  font-size: 20px;
+  transition: border-color 2s ease;
+}
+
+#clock {
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-left: 20px;
+  background-color: @barbg;
+  border-width: 7px;
+  border-style: solid;
+  border-radius: 18px;
+  border-color: @hbtu;
+  color: @tolbg;
+  font-size: 15px;
+  transition: border-color 2s ease;
+}
+
+#battery {
+  border-radius: 0px 18px 18px 0px;
+  font-size: 17px;
+  padding-bottom: 1px;
+  padding-right: 15px;
+  padding-left: 5px;
+  padding-top: 1px;
+}
+
+#memory {
+  font-size: 21px;
+  padding-right: 4px;
+  border-radius: 18px 0px 0px 18px;
+  padding-left: 15px;
+  margin-left: 10px;
+  margin-right: -4px;
+}
+
+#cpu {
+  font-size: 18px;
+  padding-right: 2px;
+}
+
+#disk {
+  font-size: 18px;
+  padding-right: 2px;
+}
+
+#backlight {
+  font-size: 17px;
+  padding-top: 1px;
+}
+
+#network {
+  background-color: @barbg;
+  color: @hbtu;
+  font-size: 16px;
+  margin-top: 6px;
+  margin-bottom: 3px;
+}
+
+#custom-vpn {
+  background-color: @barbg;
+  color: @hbtu;
+  font-size: 16px;
+  margin-top: 6px;
+  margin-bottom: 3px;
+}
+
+#temperature {
+  padding-right: 9px;
+  font-size: 16px;
+}
+
+#pulseaudio {
+  background-color: @barbg;
+  color: @hbtu;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+#pulseaudio.microphone {
+  background-color: @barbg;
+  color: @hbtu;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-size: 16px;
+  margin-left: 12px;
+  margin-right: 6px;
+}
+
+#tray {
+  background: @txt;
+  border-radius: 18px;
+  margin-left: 10px;
+  padding-left: 12px;
+  padding-right: 14px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#idle_inhibitor {
+  border-radius: 18px 0px 0px 18px;
+  background-color: @abtu;
+  color: @litebg;
+  border-color: @litebg;
+  border-width: 7px 0px 7px 7px;
+  border-style: solid;
+  font-size: 16px;
+  margin-left: 10px;
+  padding-left: 13px;
+}
+
+#idle_inhibitor.activated {
+  border-radius: 18px 0px 0px 18px;
+  border-width: 7px 0px 7px 7px;
+  font-size: 16px;
+  border-style: solid;
+  border-color: @litebg;
+  margin-left: 10px;
+  background-color: @abtu;
+  color: @litebg;
+  padding-left: 13px;
+}
+
+#custom-wallpapers {
+  background: @abtu;
+  border-width: 7px 7px 7px 0px;
+  border-style: solid;
+  color: @litebg;
+  padding-left: 3px;
+  padding-top: 1px;
+  border-color: @litebg;
+  padding-right: 7px;
+  border-radius: 0px 18px 18px 0px;
+  font-size: 14px;
+}
+
+#custom-screenshot {
+  background: @abtu;
+  border-style: solid;
+  border-color: @litebg;
+  border-width: 7px 0px 7px 0px;
+  font-size: 15px;
+  color: @litebg;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+
+#custom-clipboardclear {
+  background: @abtu;
+  border-style: solid;
+  border-color: @litebg;
+  border-width: 7px 0px 7px 0px;
+  color: @litebg;
+  font-size: 17px;
+  padding-left: 7px;
+  padding-top: 1px;
+}
+
+#custom-weather {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 8px;
+  padding-top: 1px;
+  margin-left: 10px;
+  background-color: @barbg;
+  border-width: 7px;
+  border-style: solid;
+  border-radius: 18px;
+  border-color: @hbtu;
+  color: @tolbg;
+  font-size: 15px;
+}
