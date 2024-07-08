@@ -364,11 +364,12 @@ waybar启动后的效果:
 
 4.   240531.问题:fcitx5更新后，切换输入法时fcitx5程序会挂。(目前该问题不再出现240702)
 
-    ```sh
-    # 跟新了fcitx5的环境变量
-    vim ~/.config/hypr/land/hypr_env.conf
-    # 如果还是程序莫名挂，那么请放弃使用中州韵输入法（可以在fcitx5的设置中切换）。
-    ```
+     ```bash
+     # 跟新了fcitx5的环境变量
+     vim ~/.config/hypr/land/hypr_env.conf
+     # 如果还是程序莫名挂，那么请放弃使用中州韵输入法（可以在fcitx5的设置中切换）。
+     ```
+
 
 # 参考文档
 
