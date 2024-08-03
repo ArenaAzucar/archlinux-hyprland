@@ -53,9 +53,20 @@ waybar启动后的效果:
     # 安装最新的hyprland
     sudo pacman -S hyprland-git
     # 安装项目需要的软件, 最好配置了archlinuxcn-keyring再安装
+<<<<<<< HEAD
     sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-chinese-addons alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd hypridle hyprlock
     
     paru -S rofi-lbonn-wayland-only-git oh-my-zsh-git mpvpaper-git
+=======
+    sudo pacman -S swaybg-git mpd mpc ncmpcpp pulseaudio grim bluez bluez-utils pulseaudio-bluetooth fcitx5-im fcitx5-chinese-addons alacritty-git pcmanfm brightnessctl pulseaudio paru-git ttf-monaco ttf-jetbrains-mono-nerd git mako libnotify wlogout zsh autojump zsh-syntax-highlighting zsh-autosuggestions keyd yad noto-fonts-cjk ttf-hack-nerd ttf-profont-nerd hypridle hyprlock 
+    
+    paru -S rofi-lbonn-wayland-only-git oh-my-zsh-git mpvpaper-git
+    # 如果使用vimrc文件的话，你需要安装插件
+    sudo pacman -S npm vim-plug
+    # 如果需要用代码提示相关功能，那么需要安装对应的插件和工具
+    # 然后执行':PlugUpdate'
+    # 如果是coc的插件则是':CocInstall'
+>>>>>>> 6af33fd (test)
     ```
 
   - swaybg壁纸
@@ -391,4 +402,9 @@ waybar启动后的效果:
 
 > 动态壁纸: <www.bilibili.com/video/BV1xg4y1j7yH>
 
+<<<<<<< HEAD
 > neofetch: <https://github.com/Chick2D/neofetch-themes/blob/main/small/ozozfetch.conf>
+=======
+> neofetch(弃用): <https://github.com/Chick2D/neofetch-themes/blob/main/small/ozozfetch.conf>
+
+>>>>>>> 6af33fd (test)
