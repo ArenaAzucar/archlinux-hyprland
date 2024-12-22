@@ -9,7 +9,7 @@ status=`warp-cli status | grep 'Status' | awk '{print $3}'`
 
 
 function main() {
-    if [ "$status" = "Connected" ];then
+    if [ "$status" != "Connected" and "$status" != "Disconnected." ];then
         warp-cli disconnect
         # echo '' > /home/Azucar/.profile
         notify-send 'warp服务已停止！'

@@ -32,8 +32,8 @@ ZSH_THEME="theunraveler"
 # golang configuration
 export GOROOT=/usr/lib/go  #设置为go安装的路径，有些安装包会自动设置默认的goroot
 export GOPATH=$HOME/go-work   #默认的Golang项目的工作空间
-export GOBIN=$GOPATH/bin   # go install命令生成的可执行文件的路径
-export PATH=$PATH:$GOROOT/bin:$GOBIN
+export GOBIN=/usr/bin/go   # go install命令生成的可执行文件的路径
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # man : 使用man命令时，其文档显示在neovim中
 export MANPAGER='nvim +Man!'
 
@@ -165,14 +165,19 @@ alias man="man -M /usr/share/man/zh_CN"
 alias py="python"
 # alias typora="/opt/Typora-linux-x64/Typora"
 alias startdocker="sudo systemctl start docker.service"
-alias vim="nvim"
-alias start_Sqlserver='docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Qq.123123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest'
-alias start_Mysql='docker run --name mysql -d -p 3306:3306 --restart unless-stopped -v /mydata/mysql/log:/home/Azucar/docker/mysql/log/mysql -v /mydata/mysql/data:/home/Azucar/docker/mysql/var/lib/mysql -v /mydata/mysql/conf:/home/Azucar/docker/mysql/etc/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.4.0'
+#alias vim="nvim"
+alias docker_Sqlserver='docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Qq.123123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest'
+alias docker_Mysql='docker run --name mysql -d -p 3306:3306 --restart unless-stopped -v /mydata/mysql/log:/home/Azucar/docker/mysql/log/mysql -v /mydata/mysql/data:/home/Azucar/docker/mysql/var/lib/mysql -v /mydata/mysql/conf:/home/Azucar/docker/mysql/etc/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.4.0'
+alias docker_postgreSql='docker run -d --name "pgSql" --privileged=true -e "POSTGRES_PASSWORD=123123" -p 5432:5432 -v /mydata/postgres/data:/home/Azucar/docker/postgresql/data -d postgres:15.4'
 
 scripts="$HOME/.config/Scripts"
 # cp mv等命令加上进度
 alias cpcp="sh $scripts/diyCpMv.sh 1 "
 alias mvmv="sh $scripts/diyCpMv.sh 2 "
+
+# wifi连接脚本
+alias wificonnect="sh ~/.config/Scripts/bash/wifi.sh"
+
 
 # 自动获取arch pacman的最快的源
 alias reflectora="sudo reflector --verbose -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist"
@@ -199,18 +204,18 @@ alias vscode-update="sudo sh ~/.config/Scripts/VSCodeUpdate.sh "
 
 
 
-# ## hyprland
-function set_wayland_env
- {
- cd ${HOME}
- export LANG=zh_CN.UTF-8
- }
+# ## hyprland 2024.10.05移除,所有环境配置迁移到".config/hypr/land/hypr_env.conf"中,直接命令行输入Hyprland启动即可
+# function set_wayland_env
+# {
+# cd ${HOME}
+# export LANG=zh_CN.UTF-8
+# }
 
-function start_hyprland
-{
- set_wayland_env
- exec Hyprland
-}
+# function start_hyprland
+# {
+#  set_wayland_env
+#  exec Hyprland
+# }
 
 # start_hyprland
 
@@ -221,9 +226,9 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 ## python的pyenv环境配置
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 source $ZSH/oh-my-zsh.sh
 

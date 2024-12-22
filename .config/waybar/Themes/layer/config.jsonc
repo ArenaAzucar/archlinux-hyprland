@@ -189,10 +189,10 @@
             ]
         },
         "on-click-right": "pavucontrol -t 3",
-        "on-click": "pactl -- set-sink-mute 0 toggle",
+        "on-click": "sh ~/.config/waybar/scripts/pulseaudio.sh 3 ",
         "tooltip": false,
-        "on-scroll-up": "pactl -- set-sink-volume 0 +1%",
-        "on-scroll-down": "pactl -- set-sink-volume 0 -1%"
+        "on-scroll-up": "sh ~/.config/waybar/scripts/pulseaudio.sh 1",
+        "on-scroll-down": "sh ~/.config/waybar/scripts/pulseaudio.sh 2"
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
@@ -212,8 +212,8 @@
     },
     "custom/screenshot": {
         "format": "󰹑 ",
-        "on-click": "grim -g \"$(slurp)\" - | wl-copy > /dev/null ",
-        "on-click-right": "grim - | wl-copy > /dev/null ",
+        "on-click": "grim -g \"$(slurp)\" - | wl-copy > /dev/null",
+        "on-click-right": "grim - | wl-copy > /dev/null | notify-send '全屏截图'",
         "tooltip": false
     },
     "custom/clipboardclear": {

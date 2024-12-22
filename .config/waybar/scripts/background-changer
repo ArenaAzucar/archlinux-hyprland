@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 wallpapers_path="/home/Azucar/.config/waybar/wallpaperFile/"
+wallpapers_path2="/home/Azucar/Picture/壁纸"
+
+
 
 while true; do
-    swaybg -i $(find $wallpapers_path -type f | shuf -n 1) -m fill
+    swaybg -i $(find $wallpapers_path2 -type f | shuf -n 1) -m fill
     sleep 1800s
 done
 sleep 1m

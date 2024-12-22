@@ -1,0 +1,3 @@
+-- keymaps.lua 在 Lazy.nvim 启动之前自动加载。
+-- 始终设置的默认按键映射: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- 在此添加其他按键映射

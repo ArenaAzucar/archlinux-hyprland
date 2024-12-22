@@ -12,15 +12,15 @@ function killProcess() {
 }
 
 # 随机文件
-wallpapers_path="${HOME}/Videos/壁纸/"
+wallpapers_path="${HOME}/Video/壁纸/"
 function randomFile() {
 	while [ true ]; do
 		############################################
 		killProcess "mpvpaper"
-		path=$(find "$wallpapers_path" -type f | shuf -n 1)
+        filePath=$(find "$wallpapers_path" -type f | shuf -n 1)
 		# mpvpaper eDP-1 ~/Video/壁纸/Breeze+Tree.mp4 -o " --loop --no-audio" -f
-		# notify-send ${path##*/}
-		mpvpaper eDP-1 -o "--loop --no-audio" "$path"
+		notify-send ${filePath##*/}
+		mpvpaper eDP-1 -o "--loop --no-audio" "$filePath"
 	done
 }
 randomFile
