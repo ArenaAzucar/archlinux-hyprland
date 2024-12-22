@@ -1,0 +1,147 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "custom/launcher",
+    "cpu",
+    "memory",
+    "bluetooth",
+    "network",
+    "custom/media",
+    // "hyprland/workspaces",
+    "tray"
+  ],
+  "modules-center": [
+    // "custom/ci"
+    "hyprland/workspaces",
+  ],
+  "modules-right": [
+    "custom/wallpaper",
+    "backlight",
+    "pulseaudio",
+    "clock",
+    "battery",
+    "custom/clipboardclear",
+    "custom/power"
+  ],
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "󰋎",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "default": ""
+    },
+    "on-click": "activate"
+  },
+  "network": {
+    "tooltip": true,
+    "interval": 2,
+    "format-wifi": "   {bandwidthTotalBytes}",
+    "format-ethernet": "",
+    "tooltip-format-wifi": "{essid}",
+    "tooltip-format-ethernet": "{ifname}",
+    "on-click": "sh ~/.config/waybar/scripts/vpn-warp.sh"
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": " {}%",
+    "interval": 1,
+    "on-scroll-up": "brightnessctl set 1%+ > /dev/null",
+    "on-scroll-down": "brightnessctl set 1%- > /dev/null"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{: %Y-%m-%d}"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "  {}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": "  {}%",
+    "max-length": 10
+  },
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "mpc toggle > /dev/null",
+    "on-click-right": "[ -e \"${HOME}/.config/waybar/scripts/state.txt\" ] && $(rm ${HOME}/.config/waybar/scripts/state.txt && notify-send '歌词显示已关闭') || $(touch \"${HOME}/.config/waybar/scripts/state.txt\" && notify-send '歌词显示已开启')"
+  },
+  "custom/power": {
+    "format": " ",
+    "on-click": "wlogout -b 5",
+    "tooltip": false
+  },
+  "custom/wallpaper": {
+    "format": " ",
+    "on-click": "bash ~/.config/waybar/scripts/wollpaper.sh 1",
+    "on-click-right": "bash ~/.config/waybar/scripts/wollpaper.sh 2"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "custom/ci": {
+    "return-type": "text",
+    "exec": "~/.config/waybar/scripts/songLyrics.sh",
+    "format": "{}",
+    "tooltip": "true",
+    "format-stopped": "",
+    "format-disconnected": "",
+    "format-paused": "",
+    "on-click": "mpc toggle > /dev/null ",
+    "on-scroll-up": "mpc volume +1 > /dev/null",
+    "on-scroll-down": "mpc volume -1 > /dev/null"
+  }
+}
