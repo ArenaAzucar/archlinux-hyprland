@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 wallpapers_path="/home/Azucar/.config/waybar/wallpaperFile/"
-wallpapers_path2="/home/Azucar/Picture/壁纸"
+wallpapers_path2="$HOME/Pictures/壁纸"
 
 
 

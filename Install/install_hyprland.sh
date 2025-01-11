@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # 以root权限运行
 
@@ -37,7 +37,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch'
     echo "$mirrorsListServer" >/etc/pacman.d/mirrorlist
     echo "$pacmanConfMultilib" >>/etc/pacman.conf
     echo "$pacmanConfArchCn" >>/etc/pacman.conf
->>>>>>> 6af33fd (test)
+# >>>>>>> 6af33fd (test)
 
     # 更新
     pacman -Syy archlinuxcn-keyring

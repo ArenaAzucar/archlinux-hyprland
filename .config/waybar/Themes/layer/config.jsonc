@@ -85,7 +85,7 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "tooltip": false,
-        "on-click": "hyprlock -q -c $($HOME/.config/hypr/hyprlock.sh)",
+        "on-click": "bash ~/.config/waybar/scripts/up_hypridle.sh",
         "format-icons": {
             "activated": "󰕥 ",
             "deactivated": "󰦝 "

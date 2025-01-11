@@ -211,11 +211,11 @@ alias vscode-update="sudo sh ~/.config/Scripts/VSCodeUpdate.sh "
 # export LANG=zh_CN.UTF-8
 # }
 
-# function start_hyprland
-# {
-#  set_wayland_env
-#  exec Hyprland
-# }
+function start_hyprland
+{
+  # set_wayland_env
+  exec Hyprland
+}
 
 # start_hyprland
 

@@ -38,6 +38,7 @@ function volume() {
     else
         volume_toggle
     fi
+    # pactl list sinks | grep -m 1 "音量" | awk '{print $4}' | sed 's/[^0-9]//g' >$HOME/.config/Scripts/fifo/volumeSizeFifo
 }
 
 # echo $1
